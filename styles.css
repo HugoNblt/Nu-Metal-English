@@ -312,3 +312,24 @@ text-align: center;
     aspect-ratio: initial;
     height: 250px;
 }
+/* IMPACT  ////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.impact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #241e20;
+}
+.impact .txt{
+    width: 85%;
+    text-align: center;
+    margin-top: 20px;
+}
+.impact_img{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
