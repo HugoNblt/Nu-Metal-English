@@ -46,11 +46,11 @@
     height: 80vh;
 }
 
-h1{
+.h1index{
     color: rgb(255, 255, 255);
 }
 
-h2{
+.h2index{
     text-align: center;
     width: 30%;
     margin: 10vh;
@@ -203,5 +203,112 @@ text-align: center;
 
 /* LEARN  ////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
+.bodylearn{
+    margin: 0;
+    padding: 0;
+    background-color: #3a3537;
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+}
 
+.headerlearn, .h1learn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    color: white;
+    margin: 0;
+    background-color: #5a0000;
+}
+.roots{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.h2learn{
+    text-align: center;
+    color: #dc3030;
+    font-size: 42px;
+}
+.txt{
+    color: white;
+    width: 50%;
+    font-size: 24px;
+}
+.smaller_img{
+    aspect-ratio: initial;
+    width: 200px;
+}
+.smaller_div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
+.music{
+    margin-top: 20px;
+    background-color: #241e20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.music .txt{
+    width: 85%;
+    text-align: center;
+}
+.music_img{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+.music_img div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.music_img div p{
+    font-weight: bolder;
+    color: white;
+    font-size: 16px;
+}
+.music_img img{
+    width: 40%;
+}
+
+.people{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.numetal, .emo{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 35px;
+}
+.ppl{
+    gap: 12px;
+    width: 45%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.profile p{
+    color: white;
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: center;
+}
+.desc{
+    width: fit-content;
+}
+.desc .txt{
+    width: 100%;
+}
+.ppl img{
+    aspect-ratio: initial;
+    height: 250px;
+}
