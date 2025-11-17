@@ -10,7 +10,8 @@
     --wrong: #e03131;
 }
 
-body {
+/* INDEX //////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.bodyindex{
     margin: 0;
     padding: 0;
     align-items: center;
@@ -27,7 +28,7 @@ body {
     background-color: red
 }
 
-header{
+.headerindex{
     display: flex;
     background-color: black;
     margin: 0;
@@ -35,12 +36,12 @@ header{
     justify-content: center;
 }
 
-.main_content{
+.mainindex{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url('lp.jpg');
+    background-image: url('images/lp.jpg');
     width: 100%;
     height: 80vh;
 }
@@ -74,11 +75,7 @@ footer{
     text-align: center;
 }
 
-
-
-
-
-
+/* QUIZZ  ///////////////////////////////////////////////////////////////////////////////////////////*/
 
 body.correct {
     background-color: var(--correct);
@@ -88,22 +85,21 @@ body.wrong {
     background-color: var(--wrong);
 }
 
-/* -------- MINIMAL CHANGE #1 -------- */
-main {
-    background-image: url('background.png');
+.mainquizz {
+    background-image: url('images/background.png');
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 5px; 
-    width: 90vw;          /* responsive width */
-    max-width: 600px;     /* keeps your original layout */
+    width: 90vw;         
+    max-width: 600px;     
     box-shadow: 0 0 10px 2px;
 }
 
-/* -------- MINIMAL CHANGE #2 -------- */
+
 #question-container{
-    width: 100%;         /* responsive width */
-    max-width: 600px;   /* keeps original */
+    width: 100%;        
+    max-width: 600px;   
     margin-top: 20px;
     text-align: center;
 }
@@ -203,6 +199,9 @@ text-align: center;
     justify-content: center;
     align-items: center;
 }
+
+
+/* LEARN  ////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 
 
