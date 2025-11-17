@@ -1,122 +1,99 @@
-// Mes constantes et variables
-const startButton = document.getElementById('start-btn'); // On localise le bouton Commencer
-const questionContainer = document.getElementById('question-container');
-const answerButtonsElement = document.getElementById('answer-buttons');
-const questionElement = document.getElementById('question');
-const nextButton = document.getElementById('next-btn');
-let currentQuestionIndex = 0;
-// Mes détecteurs d'événement
-startButton.addEventListener('click', startGame); // On surveille le clique
-
-// Mes fonctions
-function startGame() {
-    console.log('Démarrage')
-    startButton.classList.add('hide')
-    questionContainer.classList.remove('hide')
-    setNextQuestion();
-    resetState();
-    showAnwserButtons(questions[0]);
-    showQuestion(questions[0]);
-}
-
+const startButton = document.getElementById("start-btn"),
+  nextButton = document.getElementById("next-btn"),
+  questionContainer = document.getElementById("question-container"),
+  questionElement = document.getElementById("question"),
+  answerButtonsElement = document.getElementById("answer-buttons");
+let currentQuestionIndex = 0,
+  score = 0;
+startButton.addEventListener("click", startGame),
+  nextButton.addEventListener("click", () => {
+    currentQuestionIndex++, setNextQuestion();
+  });
 const questions = [
-    // Première question
-        {
-            enonce: 'Quel est le langage de programmation principalement utilisé pour le développement web côté client ?',
-            reponses: [
-                { texte: 'Python', correcte: false },
-                { texte: 'C++', correcte: false },
-                { texte: 'Java', correcte: false },
-                { texte: 'JavaScript', correcte: true }
-            ]
-        },
-        {
-            enonce: 'La meilleure Université pour faire MMI',
-            reponses: [
-                { texte: 'IUT de Troyes', correcte: true },
-                { texte: 'IUT de Dijon', correcte: false },
-                { texte: 'IUT de Nancy', correcte: false },
-                { texte: 'IUT de Tours', correcte: false }
-            ]
-        },
-        {
-            enonce: 'C\'est quoi css ?',
-            reponses: [
-                { texte: 'Python', correcte: false },
-                { texte: 'C++', correcte: false },
-                { texte: 'Java', correcte: false },
-                { texte: 'CSS', correcte: true }
-            ]
-        },
-        {
-            enonce: 'Quel est le langage de programmation principalement utilisé pour le développement web côté client ?',
-            reponses: [
-                { texte: 'Python', correcte: false },
-                { texte: 'C++', correcte: false },
-                { texte: 'Java', correcte: false },
-                { texte: 'JavaScript', correcte: true }
-            ]
-        }
-    ]
-    
-
-    function showQuestion(questions) {
-        questionElement.innerText = questions.enonce; // Je change le texte d'exemple de mon élément HTML par l'énoncé de ma première question
-    }
-    showQuestion(questions[currentQuestionIndex + 1]);
-
-function showAnwserButtons(question){
-    question.reponses.forEach(reponse => {
-        let button = document.createElement('button');
-        button.innerText = reponse.texte;
-        button.classList.add('btn');
-        if (reponse.correcte) {
-            button.dataset.correct = true;
-        }
-        button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button); // Ne pas oublier de déclarer la constante
-    });}
-    showAnwserButtons(questions[currentQuestionIndex]);
-
-function resetState() {
-    answerButtonsElement.classList.add('hide');
-    answerButtonsElement.innerHTML = '';    
-}
-function setStatusClass(element, isCorrect) {
-    if (isCorrect) {
-        element.classList.remove('correct', 'wrong');
-        element.classList.add('correct');
-    } else {
-        element.classList.add('wrong');
-    }
-}
-function selectAnswer(e) { // e défini l'événement du clique
-    const selectedButton = e.target;
-    // console.info(selectedButton); // On regarde si c'est bien le bouton cliqué
-    const isCorrect = selectedButton.dataset.correct; // Sera soit true soit undefined en fonction de la réponse
-    // console.info('la réponse est-elle correcte ? '+isCorrect);
-    
-    // Appliquer le statut (donc la couleur) de réponse au body (correcte ou incorrecte)
-    setStatusClass(document.body, isCorrect);
-
-    // Appliquer le statut aux boutons
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct);
-    });
-    if (questions.length > currentQuestionIndex + 1 ) {
-        nextButton.classList.remove('hide');
-    } else {
-        startButton.innerText = 'Recommencer';
-        startButton.classList.remove('hide');
-    }
+  {
+    enonce:
+      "Quel est le langage de programmation principalement utilis\xe9 pour le d\xe9veloppement web c\xf4t\xe9 client ?",
+    reponses: [
+      { texte: "Python", correcte: !1 },
+      { texte: "C++", correcte: !1 },
+      { texte: "Java", correcte: !1 },
+      { texte: "JavaScript", correcte: !0 },
+    ],
+  },
+  {
+    enonce: "Quel langage s’utilise pour styliser une page web ?",
+    reponses: [
+      { texte: "HTML", correcte: !1 },
+      { texte: "CSS", correcte: !0 },
+      { texte: "PHP", correcte: !1 },
+      { texte: "SQL", correcte: !1 },
+    ],
+  },
+  {
+    enonce: "Que signifie HTML ?",
+    reponses: [
+      { texte: "Hyper Text Markup Language", correcte: !0 },
+      { texte: "Home Tool Markup Language", correcte: !1 },
+      { texte: "Hyperlinks Text Mark Language", correcte: !1 },
+      { texte: "Hyper Tool Multi Language", correcte: !1 },
+    ],
+  },
+];
+function startGame() {
+  startButton.classList.add("hide"),
+    questionContainer.classList.remove("hide"),
+    (currentQuestionIndex = 0),
+    (score = 0),
+    setNextQuestion();
 }
 function setNextQuestion() {
-    // console.log(currentQuestionIndex)
-    resetState();
-    showQuestion(questions[currentQuestionIndex]);
-    showAnwserButtons(questions[currentQuestionIndex])
+  resetState(),
+    currentQuestionIndex < questions.length
+      ? showQuestion(questions[currentQuestionIndex])
+      : showEndMessage();
 }
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++;
-    setNextQuestion();
-});
+function showQuestion(e) {
+  (questionElement.innerText = e.enonce),
+    e.reponses.forEach((e) => {
+      let t = document.createElement("button");
+      (t.innerText = e.texte),
+        t.classList.add("btn"),
+        e.correcte && (t.dataset.correct = "true"),
+        t.addEventListener("click", selectAnswer),
+        answerButtonsElement.appendChild(t);
+    });
+}
+function resetState() {
+  clearStatusClass(document.body),
+    nextButton.classList.add("hide"),
+    (answerButtonsElement.innerHTML = "");
+}
+function selectAnswer(e) {
+  let t = e.target,
+    n = "true" === t.dataset.correct;
+  n && score++,
+    setStatusClass(document.body, n),
+    Array.from(answerButtonsElement.children).forEach((e) => {
+      setStatusClass(e, "true" === e.dataset.correct);
+    }),
+    currentQuestionIndex < questions.length - 1
+      ? ((nextButton.innerText = "Suivante"),
+        nextButton.classList.remove("hide"))
+      : ((nextButton.innerText = "Voir le score"),
+        nextButton.classList.remove("hide"));
+}
+function showEndMessage() {
+  (questionElement.innerText = `Fin du quiz ! Votre score : ${score} / ${questions.length}`),
+    (answerButtonsElement.innerHTML = ""),
+    (startButton.innerText = "Recommencer"),
+    startButton.classList.remove("hide"),
+    questionContainer.classList.remove("hide");
+}
+function setStatusClass(e, t) {
+  clearStatusClass(e),
+    t ? e.classList.add("correct") : e.classList.add("wrong");
+}
+function clearStatusClass(e) {
+  e.classList.remove("correct"), e.classList.remove("wrong");
+}
+questionContainer.classList.add("hide"), nextButton.classList.add("hide");
