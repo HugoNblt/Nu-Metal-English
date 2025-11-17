@@ -12,30 +12,75 @@ startButton.addEventListener("click", startGame),
 const questions = [
   {
     enonce:
-      "Quel est le langage de programmation principalement utilis\xe9 pour le d\xe9veloppement web c\xf4t\xe9 client ?",
+      "Where did emo originally develop?",
     reponses: [
-      { texte: "Python", correcte: !1 },
-      { texte: "C++", correcte: !1 },
-      { texte: "Java", correcte: !1 },
-      { texte: "JavaScript", correcte: !0 },
+      { texte: "Los Angeles", correcte: !1 },
+      { texte: "Washington D.C.", correcte: !0 },
+      { texte: "London", correcte: !1 },
+      { texte: "Seattle", correcte: !1 },
     ],
   },
   {
-    enonce: "Quel langage s’utilise pour styliser une page web ?",
+    enonce: "Which band is strongly associated with the nu-metal genre?",
     reponses: [
-      { texte: "HTML", correcte: !1 },
-      { texte: "CSS", correcte: !0 },
-      { texte: "PHP", correcte: !1 },
-      { texte: "SQL", correcte: !1 },
+      { texte: "My Chemical Romance", correcte: !1 },
+      { texte: "Blink-182", correcte: !1 },
+      { texte: "Korn", correcte: !0 },
+      { texte: "Arctic Monkeys", correcte: !1 },
     ],
   },
   {
-    enonce: "Que signifie HTML ?",
+    enonce: "Which of the following is a typical theme in emo lyrics?",
     reponses: [
-      { texte: "Hyper Text Markup Language", correcte: !0 },
-      { texte: "Home Tool Markup Language", correcte: !1 },
-      { texte: "Hyperlinks Text Mark Language", correcte: !1 },
-      { texte: "Hyper Tool Multi Language", correcte: !1 },
+      { texte: "Party lifestyle", correcte: !1 },
+      { texte: "Emotional struggle and heartbreak", correcte: !0 },
+      { texte: "Space exploration", correcte: !1 },
+      { texte: "Political satire", correcte: !1 },
+    ],
+  },
+  {
+    enonce: "Which musical elements are commonly found in nu-metal?",
+    reponses: [
+      { texte: "Opera vocals", correcte: !1 },
+      { texte: "Acoustic folk instruments", correcte: !1 },
+      { texte: "Jazz improvisation", correcte: !1 },
+      { texte: "Electronic beats mixed with heavy guitar riffs", correcte: !0 },
+    ],
+  },
+  {
+    enonce: "Which fashion item is often linked to emo culture?",
+    reponses: [
+      { texte: "Cowboy boots", correcte: !1 },
+      { texte: "Studded belts and skinny jeans", correcte: !0 },
+      { texte: "Hawaiian shirts", correcte: !1 },
+      { texte: "Berets", correcte: !1 },
+    ],
+  },
+  {
+    enonce: "Which band is known for combining rap vocals with metal elements?",
+    reponses: [
+      { texte: "Linkin Park", correcte: !0 },
+      { texte: "Paramore", correcte: !1 },
+      { texte: "Sum 41", correcte: !1 },
+      { texte: "The Killers", correcte: !1 },
+    ],
+  },
+  {
+    enonce: "Which emotion is commonly associated with the emo subculture?",
+    reponses: [
+      { texte: "Indifference", correcte: !1 },
+      { texte: "Excitement", correcte: !1 },
+      { texte: "Angst and sensitivity", correcte: !0 },
+      { texte: "Pride", correcte: !1 },
+    ],
+  },
+  {
+    enonce: "During which decade did nu-metal reach mainstream popularity?",
+    reponses: [
+      { texte: "1960s", correcte: !1 },
+      { texte: "1980s", correcte: !1 },
+      { texte: "1990s–2000s", correcte: !0 },
+      { texte: "1910s", correcte: !1 },
     ],
   },
 ];
