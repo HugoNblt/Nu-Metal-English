@@ -122,15 +122,15 @@ function selectAnswer(e) {
       setStatusClass(e, "true" === e.dataset.correct);
     }),
     currentQuestionIndex < questions.length - 1
-      ? ((nextButton.innerText = "Suivante"),
+      ? ((nextButton.innerText = "Next"),
         nextButton.classList.remove("hide"))
-      : ((nextButton.innerText = "Voir le score"),
+      : ((nextButton.innerText = "See score"),
         nextButton.classList.remove("hide"));
 }
 function showEndMessage() {
-  (questionElement.innerText = `Fin du quiz ! Votre score : ${score} / ${questions.length}`),
+  (questionElement.innerText = `End of the quiz ! Your score : ${score} / ${questions.length}`),
     (answerButtonsElement.innerHTML = ""),
-    (startButton.innerText = "Recommencer"),
+    (startButton.innerText = "Do it again"),
     startButton.classList.remove("hide"),
     questionContainer.classList.remove("hide");
 }
